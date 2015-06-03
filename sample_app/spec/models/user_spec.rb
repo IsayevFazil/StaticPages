@@ -44,7 +44,7 @@ end
       end
     end
   end
-end
+
 
 describe "when email address is already taken" do
     before do
@@ -55,7 +55,7 @@ describe "when email address is already taken" do
 
     it { should_not be_valid }
   end
-end
+
 
 describe "when password is not present" do
     before do
@@ -69,7 +69,7 @@ describe "when password is not present" do
     before { @user.password_confirmation = "mismatch" }
     it { should_not be_valid }
   end
-end
+
 
 describe "with a password that's too short" do
     before { @user.password = @user.password_confirmation = "a" * 5 }
@@ -91,4 +91,4 @@ describe "with a password that's too short" do
       specify { expect(user_for_invalid_password).to be_false }
     end
   end
-end
+
